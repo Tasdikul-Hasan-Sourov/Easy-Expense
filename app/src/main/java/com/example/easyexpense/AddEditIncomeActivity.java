@@ -1,5 +1,6 @@
 package com.example.easyexpense;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -13,6 +14,10 @@ import android.widget.EditText;
 import android.widget.NumberPicker;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 public class AddEditIncomeActivity extends AppCompatActivity {
 
@@ -37,6 +42,11 @@ public class AddEditIncomeActivity extends AppCompatActivity {
         editAmount = findViewById(R.id.addMoney);
         date = findViewById(R.id.addDate);
         save=findViewById(R.id.saveExpense);
+        DateFormat df = new SimpleDateFormat("EEE, d MMM yy, h:mm a");
+        String dt = df.format(Calendar.getInstance().getTime());
+        date.setText(dt);
+        ActionBar actionBar=getSupportActionBar();
+        actionBar.hide();
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_launcher_background);
         Intent intent = getIntent();
         if (intent.hasExtra(EXTRA_ID)) {
@@ -67,6 +77,7 @@ public class AddEditIncomeActivity extends AppCompatActivity {
         }
         setResult(RESULT_OK, data);
         finish();
+        Toast.makeText(this, "Saved", Toast.LENGTH_SHORT).show();
     }
 
    // @Override
@@ -88,6 +99,7 @@ public class AddEditIncomeActivity extends AppCompatActivity {
     //}
     public void getSave(View view){
         saveNote();
+
     }
 
 }

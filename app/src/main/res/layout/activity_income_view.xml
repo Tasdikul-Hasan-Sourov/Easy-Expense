@@ -11,23 +11,28 @@
         android:layout_height="300dp"
         android:background="@drawable/maintopbg">
     </LinearLayout>
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="-150dp">
+        android:layout_height="match_parent"
+        android:layout_marginTop="-150dp"
+        android:orientation="vertical">
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/adinFloat"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="end|bottom"
+            android:src="@drawable/ic_add"
+            android:backgroundTint="@color/yellow"
+            android:layout_margin="20dp"/>
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/recIncome">
 
     </androidx.recyclerview.widget.RecyclerView>
-    </LinearLayout>
+    </RelativeLayout>
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/adinFloat"
-            android:layout_gravity="end|bottom"
-            android:src="@drawable/ic_add"
-            android:layout_margin="15dp"/>
+
 </LinearLayout>

@@ -1,6 +1,7 @@
 package com.example.easyexpense;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModel;
@@ -18,6 +19,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 import java.util.List;
 
 public class IncomeView extends AppCompatActivity {
@@ -29,7 +32,9 @@ public class IncomeView extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_income_view);
-        Button buttonAddNote = findViewById(R.id.adinFloat);
+        FloatingActionButton buttonAddNote = findViewById(R.id.adinFloat);
+        ActionBar actionBar=getSupportActionBar();
+        actionBar.hide();
         buttonAddNote.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
